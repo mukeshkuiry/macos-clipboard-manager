@@ -261,7 +261,13 @@ class HUDWindow: NSWindow {
     
     func show(title: String, preview: String) {
         self.titleLabel.stringValue = title
-        self.previewLabel.stringValue = preview.replacingOccurrences(of: "\n", with: " ")
+        
+        var cleanPreview = preview.trimmingCharacters(in: .whitespacesAndNewlines)
+            .replacingOccurrences(of: "\n", with: " ")
+        if cleanPreview.count > 80 {
+            cleanPreview = String(cleanPreview.prefix(80)) + "..."
+        }
+        self.previewLabel.stringValue = cleanPreview
         
         if let screen = NSScreen.screens.first(where: { NSMouseInRect(NSEvent.mouseLocation, $0.frame, false) }) ?? NSScreen.main {
             let screenFrame = screen.visibleFrame
@@ -527,10 +533,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTableViewDataSource, NSTab
         popupWindow.contentView = visualEffectView
         
         searchField.placeholderString = "Search clipboard..."
-        searchField.font = NSFont.systemFont(ofSize: 13.5)
-        searchField.isBezeled = false
+        searchField.font = NSFont.systemFont(ofSize: 13)
+        searchField.bezelStyle = .roundedBezel
+        searchField.isBezeled = true
+        searchField.drawsBackground = true
         searchField.focusRingType = .none
-        searchField.drawsBackground = false
         searchField.delegate = self
         searchField.translatesAutoresizingMaskIntoConstraints = false
         visualEffectView.addSubview(searchField)
@@ -571,10 +578,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTableViewDataSource, NSTab
         visualEffectView.addSubview(footerLabel)
         
         NSLayoutConstraint.activate([
-            searchField.topAnchor.constraint(equalTo: visualEffectView.topAnchor, constant: 12),
+            searchField.topAnchor.constraint(equalTo: visualEffectView.topAnchor, constant: 14),
             searchField.leadingAnchor.constraint(equalTo: visualEffectView.leadingAnchor, constant: 14),
             searchField.trailingAnchor.constraint(equalTo: visualEffectView.trailingAnchor, constant: -14),
-            searchField.heightAnchor.constraint(equalToConstant: 22),
+            searchField.heightAnchor.constraint(equalToConstant: 24),
             
             separator.topAnchor.constraint(equalTo: searchField.bottomAnchor, constant: 10),
             separator.leadingAnchor.constraint(equalTo: visualEffectView.leadingAnchor),
