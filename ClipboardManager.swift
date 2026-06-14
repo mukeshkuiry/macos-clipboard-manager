@@ -237,12 +237,15 @@ class HUDWindow: NSWindow {
         titleLabel.font = NSFont.systemFont(ofSize: 11, weight: .bold)
         titleLabel.textColor = .secondaryLabelColor
         titleLabel.alignment = .center
+        titleLabel.cell?.usesSingleLineMode = true
+        titleLabel.cell?.lineBreakMode = .byTruncatingTail
         
         previewLabel.translatesAutoresizingMaskIntoConstraints = false
         previewLabel.font = NSFont.systemFont(ofSize: 13, weight: .medium)
         previewLabel.textColor = .labelColor
         previewLabel.alignment = .center
-        previewLabel.lineBreakMode = .byTruncatingTail
+        previewLabel.cell?.usesSingleLineMode = true
+        previewLabel.cell?.lineBreakMode = .byTruncatingTail
         
         visualEffectView.addSubview(titleLabel)
         visualEffectView.addSubview(previewLabel)
