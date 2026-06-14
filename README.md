@@ -81,4 +81,4 @@ Configurations and histories are stored safely on your local disk at `~/.config/
 ---
 
 ## 📄 License
-This project is open-source and released under the MIT License. Created by **Mukesh Kuirky**.
+This project is open-source and released under the MIT License. Created by **Mukesh Kuiry**.
