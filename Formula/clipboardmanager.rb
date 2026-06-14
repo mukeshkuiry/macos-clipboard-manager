@@ -1,9 +1,9 @@
 class Clipboardmanager < Formula
   desc "Sleek, minimalist, zero-permission native macOS clipboard manager"
-  homepage "https://github.com/mukesh-kuirky/macos-clipboard-manager"
-  url "https://github.com/mukesh-kuirky/macos-clipboard-manager/archive/refs/tags/v1.0.0.tar.gz"
+  homepage "https://github.com/mukeshkuiry/macos-clipboard-manager"
+  url "https://github.com/mukeshkuiry/macos-clipboard-manager/archive/refs/tags/v1.0.0.tar.gz"
   sha256 "0000000000000000000000000000000000000000000000000000000000000000" # Placeholder for release tarball
-  head "https://github.com/mukesh-kuirky/macos-clipboard-manager.git", branch: "main"
+  head "https://github.com/mukeshkuiry/macos-clipboard-manager.git", branch: "main"
 
   depends_on :xcode => ["12.0", :build]
 

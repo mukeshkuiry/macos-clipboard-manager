@@ -36,7 +36,7 @@ You can compile and register the ClipBro background daemon on-the-fly using Home
 
 ```bash
 # 1. Tap our official Homebrew repository
-brew tap mukesh-kuirky/tap
+brew tap mukeshkuiry/tap
 
 # 2. Compile and install ClipBro on-the-fly
 brew install clipboardmanager
@@ -52,7 +52,7 @@ If you prefer to compile and install locally without using Homebrew:
 
 ```bash
 # 1. Clone the repository and enter the directory
-git clone https://github.com/mukesh-kuirky/macos-clipboard-manager.git
+git clone https://github.com/mukeshkuiry/macos-clipboard-manager.git
 cd macos-clipboard-manager
 
 # 2. Run the local installer script
