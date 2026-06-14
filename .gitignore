@@ -1,0 +1,10 @@
+# Compiled binaries
+ClipboardManager
+test_*
+
+# OS logs
+.DS_Store
+
+# Temporary files
+*.tmp
+*.log
